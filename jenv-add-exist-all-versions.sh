@@ -1,4 +1,5 @@
 #!/bin/bash
+# jenv - https://github.com/jenv/jenv
 # only available on macOS
 
 # TODO: check install brew if install brew when not exist
