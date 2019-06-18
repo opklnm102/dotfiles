@@ -6,18 +6,18 @@
 
 # brew install jenv
 if ! brew ls --versions jenv > /dev/null; then
-    echo "installing jenv..."
-    brew install jenv
+  echo "installing jenv..."
+  brew install jenv
 
-    if [ -z "$BASH_VERSION" ]; then
-        echo "use bash"
-        echo 'export PATH="$HOME/.jenv/bin:$PATH"' >> ~/.bash_profile
-        echo 'eval "$(jenv init -)"' >> ~/.bash_profile
-    elif [ -z "$ZSH_VERSION" ]; then
-        echo "use zsh"
-        echo 'export PATH="$HOME/.jenv/bin:$PATH"' >> ~/.zshrc
-        echo 'eval "$(jenv init -)"' >> ~/.zshrc
-    fi
+  if [ -z "$BASH_VERSION" ]; then
+    echo "use bash"
+    echo 'export PATH="$HOME/.jenv/bin:$PATH"' >> ~/.bash_profile
+    echo 'eval "$(jenv init -)"' >> ~/.bash_profile
+  elif [ -z "$ZSH_VERSION" ]; then
+    echo "use zsh"
+    echo 'export PATH="$HOME/.jenv/bin:$PATH"' >> ~/.zshrc
+    echo 'eval "$(jenv init -)"' >> ~/.zshrc
+  fi
 fi
 
 
@@ -26,10 +26,9 @@ JVM_HOME_PATH=/Library/Java/JavaVirtualMachines/*
 
 for java in $JVM_HOME_PATH
 do
-    echo add jenv $java
- #   jenv add $java/Contents/Home
+  echo add jenv $java
+  jenv add $java/Contents/Home
 done
 
-echo "java lookup managed by jenv..."
+echo "Finished...! java lookup managed by jenv..."
 jenv versions
-
